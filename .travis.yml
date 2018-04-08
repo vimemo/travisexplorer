@@ -1,21 +1,20 @@
-language: java
-sudo: true
-jdk:
-  - oraclejdk8
+language: node_js
 
-addons:
-  chrome: "stable"
+node_js:
+  - "8"
+
+sudo: false
 
 services:
   - docker
 
-env:
-  matrix:
-  - NODE_VERSION=8 TEST_SUITE=normal
-  global:
-  - COUCH_URL=http://admin:pass@localhost:5984/medic
-  - API_URL=http://admin:pass@localhost:5988
-  - COUCH_NODE_NAME=nonode@nohost
+# env:
+#   matrix:
+#   - NODE_VERSION=8 TEST_SUITE=normal
+#   global:
+#   - COUCH_URL=http://admin:pass@localhost:5984/medic
+#   - API_URL=http://admin:pass@localhost:5988
+#   - COUCH_NODE_NAME=nonode@nohost
 
 before_install:
   - docker run -d -p 5984:5984 --name couch couchdb:2
@@ -27,6 +26,12 @@ before_install:
 
 install:
   nvm install $NODE_VERSION
+
+# cache:
+#   yarn: true
+#   directories:
+#     - ".eslintcache"
+#     - "node_modules"
 
 before_script:
   - mkdir logs
