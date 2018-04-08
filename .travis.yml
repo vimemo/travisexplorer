@@ -1,0 +1,43 @@
+language: java
+sudo: true
+jdk:
+  - oraclejdk8
+
+addons:
+  chrome: "stable"
+
+services:
+  - docker
+
+env:
+  matrix:
+  - NODE_VERSION=8 TEST_SUITE=normal
+  global:
+  - COUCH_URL=http://admin:pass@localhost:5984/medic
+  - API_URL=http://admin:pass@localhost:5988
+  - COUCH_NODE_NAME=nonode@nohost
+
+before_install:
+  - docker run -d -p 5984:5984 --name couch couchdb:2
+  - echo "Starting CouchDB 2.x"
+  - until nc -z localhost 5984; do sleep 1; done
+  - echo "CouchDB Started"
+  - pip install --user awscli
+  - export PATH=$PATH:$HOME/.local/bin
+
+install:
+  nvm install $NODE_VERSION
+
+before_script:
+  - mkdir logs
+  - nvm use $NODE_VERSION
+  - npm install -g npm@^5.3.0
+  - npm -v
+  - npm install
+  - npm ls || true
+  # Create couchdb system tables (this has to be done manually on couchdb 2.0)
+  - curl -X PUT http://127.0.0.1:5984/{_users,_replicator,_global_changes,_metadata,admins}
+  - curl -X PUT localhost:5984/medic-test
+
+script:
+  - yarn test
