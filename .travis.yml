@@ -19,7 +19,7 @@ before_install:
   - echo "Starting CouchDB 2.x"
   - until nc -z localhost 5984; do sleep 1; done
   - echo "CouchDB Started"
-  - pip install --user awscli
+  # - pip install --user awscli
   - export PATH=$PATH:$HOME/.local/bin
 
 # cache:
@@ -29,14 +29,14 @@ before_install:
 #     - "node_modules"
 
 before_script:
-  - mkdir logs
-  - npm install -g npm@^5.3.0
-  - npm -v
-  - npm install
-  - npm ls || true
+  # - mkdir logs
+  # - npm install -g npm@^5.3.0
+  # - npm -v
+  # - npm install
+  # - npm ls || true
   # Create couchdb system tables (this has to be done manually on couchdb 2.0)
   - curl -X PUT http://127.0.0.1:5984/{_users,_replicator,_global_changes,_metadata,admins}
   - curl -X PUT localhost:5984/medic-test
 
 script:
-  - yarn te
+  - yarn test
