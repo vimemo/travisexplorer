@@ -9,8 +9,6 @@ services:
   - docker
 
 # env:
-#   matrix:
-#   - NODE_VERSION=8 TEST_SUITE=normal
 #   global:
 #   - COUCH_URL=http://admin:pass@localhost:5984/medic
 #   - API_URL=http://admin:pass@localhost:5988
@@ -23,9 +21,6 @@ before_install:
   - echo "CouchDB Started"
   - pip install --user awscli
   - export PATH=$PATH:$HOME/.local/bin
-
-install:
-  nvm install $NODE_VERSION
 
 # cache:
 #   yarn: true
