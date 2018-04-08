@@ -30,7 +30,6 @@ before_install:
 
 before_script:
   - mkdir logs
-  - nvm use $NODE_VERSION
   - npm install -g npm@^5.3.0
   - npm -v
   - npm install
@@ -40,4 +39,4 @@ before_script:
   - curl -X PUT localhost:5984/medic-test
 
 script:
-  - yarn test
+  - yarn te
