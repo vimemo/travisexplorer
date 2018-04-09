@@ -21,6 +21,7 @@
     "jest": "^22.4.3"
   },
   "dependencies": {
+    "curl-request": "^1.1.1",
     "express": "^4.16.3",
     "nodemon": "^1.17.3",
     "pouchdb": "^6.4.3",
