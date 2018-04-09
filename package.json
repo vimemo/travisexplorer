@@ -29,7 +29,8 @@
   "jest": {
     "testEnvironment": "node",
     "collectCoverageFrom": [
-      "lib/**/*.{js}"
+      "lib/**/*.{js}",
+      "!lib/index.js"
     ],
     "coverageThreshold": {
       "global": {

@@ -3,17 +3,19 @@ import Couch from '../lib/pouch'
 import docs from './docs.json'
 
 describe('couch', () => {
-  const DB_NAME = 'couch-test'
-  const COUCH_URL = `http://localhost:5984/${DB_NAME}`
-  const couch = new Couch(COUCH_URL)
+  const DB_NAME = 'couch-testing'
+  // const URL = 'http://admin:pass@localhost:5983'
+  const URL = 'http://localhost:5984'
+  const COUCH_DB_URL = `${URL}/${DB_NAME}`
+  const couch = new Couch(COUCH_DB_URL)
 
-  const cleanUp = async () => await new PouchDB(COUCH_URL).destroy()
+  const cleanUp = async () => await new PouchDB(COUCH_DB_URL).destroy()
 
   beforeEach(async () => cleanUp())
   afterEach(() => cleanUp())
 
   describe('couch operations', () => {
-    beforeEach(async () => await new PouchDB(COUCH_URL).bulkDocs(docs))
+    beforeEach(async () => await new PouchDB(COUCH_DB_URL).bulkDocs(docs))
 
     test('empty constructor', () => {
       expect(() => new Couch()).toThrowError(/Missing Parameter/)

@@ -19,6 +19,8 @@ before_install:
   - echo "Starting CouchDB 2.x"
   - until nc -z localhost 5984; do sleep 1; done
   - echo "CouchDB Started"
+  - curl -X PUT localhost:5984/testing
+  - echo http://localhost:5984/testing
   # - pip install --user awscli
   - export PATH=$PATH:$HOME/.local/bin
 
