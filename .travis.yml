@@ -30,13 +30,14 @@ cache:
 
 before_script:
   - mkdir logs
-  - npm install -g npm@^5.3.0
-  - npm -v
-  - npm install
-  - npm ls || true
+  # - npm install -g npm@^5.3.0
+  # - npm -v
+  # - npm install
+  # - npm ls || true
+  - sudo apt-get update; sudo apt-get install curl
   # Create couchdb system tables (this has to be done manually on couchdb 2.0)
   # - curl -X http://localhost:5984/_node/{node-name}/_config/admins
-  # - curl -X PUT localhost:5984/{_users,_replicator,_global_changes,_metadata,admins}
+  - curl -X PUT localhost:5984/{_users,_replicator,_global_changes,_metadata,admins}
   - curl -X PUT localhost:5984/medic-test
   - curl -X PUT localhost:5984/medic-test-sentinel
 
