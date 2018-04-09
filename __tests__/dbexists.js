@@ -1,7 +1,7 @@
 import CurlRequest from 'curl-request'
 
 const curl = new CurlRequest()
-const URL = 'http://admin:pass@localhost:5984'
+const URL = 'http://localhost:5984'
 const medic = `${URL}/medic-test`
 const sentinel = `${URL}/medic-test-sentinel`
 
