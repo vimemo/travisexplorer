@@ -4,8 +4,8 @@ import docs from './docs.json'
 
 describe('couch', () => {
   const DB_NAME = 'couch-testing'
-  // const URL = 'http://admin:pass@localhost:5983'
-  const URL = 'http://localhost:5984'
+  const URL = 'http://admin:pass@localhost:5983'
+  // const URL = 'http://localhost:5984'
   const COUCH_DB_URL = `${URL}/${DB_NAME}`
   const couch = new Couch(COUCH_DB_URL)
 

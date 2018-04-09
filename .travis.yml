@@ -39,7 +39,6 @@ before_script:
   # - curl -X http://localhost:5984/_node/{node-name}/_config/admins
   - curl -X PUT localhost:5984/{_users,_replicator,_global_changes,_metadata,admins}
   - curl -X PUT localhost:5984/medic-test
-  - curl -X PUT localhost:5984/medic-test-sentinel
   - curl -s -X PUT localhost:5984/_node/nonode@nohost/_config/admins/admin -d '"pass"'
 
 script:
