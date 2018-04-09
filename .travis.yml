@@ -17,8 +17,8 @@ services:
 before_install:
   - docker run -d -p 5984:5984 --name couch couchdb:2
   - echo "Starting CouchDB 2.x"
-  # - until nc -z localhost 5984; do sleep 1; done
-  - while ! nc -vz localhost 5984; do sleep 1; done
+  - until nc -z localhost 5984; do sleep 1; done
+  # - while ! nc -vz localhost 5984; do sleep 1; done
   - echo "CouchDB Started"
   - export PATH=$PATH:$HOME/.local/bin
 
@@ -29,11 +29,11 @@ cache:
     - "node_modules"
 
 before_script:
-  # - mkdir logs
-  # - npm install -g npm@^5.3.0
-  # - npm -v
-  # - npm install
-  # - npm ls || true
+  - mkdir logs
+  - npm install -g npm@^5.3.0
+  - npm -v
+  - npm install
+  - npm ls || true
   # Create couchdb system tables (this has to be done manually on couchdb 2.0)
   # - curl -X http://localhost:5984/_node/{node-name}/_config/admins
   # - curl -X PUT localhost:5984/{_users,_replicator,_global_changes,_metadata,admins}
