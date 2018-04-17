@@ -29,6 +29,9 @@
   },
   "jest": {
     "testEnvironment": "node",
+    "testMatch": [
+      "<rootDir>/tests/**/*.js"
+    ],
     "collectCoverageFrom": [
       "lib/**/*.{js}",
       "!lib/index.js"
@@ -40,6 +43,7 @@
         "lines": 100,
         "statements": 100
       }
-    }
+    },
+    "globalSetup": "<rootDir>/setup.js"
   }
 }
