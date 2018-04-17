@@ -1,6 +1,6 @@
 version: '2'
 services:
-  web:
+  test:
     build: .
     command: yarn test
     volumes:
@@ -9,15 +9,22 @@ services:
     # ports:
     #   - "3005:3000"
     #   - "5985:5984"
-    depends_on:
+    # depends_on:
+    #   - couch
+    links:
       - couch
+      - postgres
     environment:
       COUCH_URL: http://localhost:5984
   couch:
-    image: couchdb:2.1.1
+    image: couchdb:2
     ports:
       - "5984"
     environment:
       COUCHDB_NAME: couch-test
       COUCHDB_USER: admin
       COUCHDB_PASSWORD: admin
+  postgres:
+    image: postgres:9
+    ports:
+      - "5432"
