@@ -22,5 +22,5 @@ services:
       - couch
       - postgres
     environment:
-      TEST_COUCH_URL: http://${COUCH_ADMIN}:${COUCH_PASS}@couch:${COUCH_PORT}
-      TEST_PG_URL: postgres://postgres:postgres@postgres:${PG_PORT}
+      TEST_COUCH_URL: http://${COUCH_ADMIN}:${COUCH_PASS}@couch:5984
+      TEST_PG_URL: postgres://postgres:postgres@postgres:5432

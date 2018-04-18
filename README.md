@@ -15,3 +15,21 @@ docker-compose run tests yarn test --coverage
 # Running test watcher
 
 docker-compose run tests yarn test --watchAll
+
+# Running against local databases
+
+```
+
+export TEST_PG_URL=your-pg-url
+export TEST_COUCH_URL=your-couch-url
+yarn test --coverage --projects jest-*.config.js
+
+```
+
+# Known Issues
+The following jest issue prevents running multiple
+runners(projects) before the databases are available.
+Once the db/containers are available, linting and testing (runners) are available; jest --projects jest-*.config.js
+```
+https://github.com/facebook/jest/issues/5441
+```

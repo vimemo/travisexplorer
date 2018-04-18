@@ -37,6 +37,7 @@ const waitForPgToBecomeAvailable = async (url, timeout, maxRetries) => {
     try {
       await conn.raw('SELECT * FROM pg_catalog.pg_tables')
       console.log(`- pg [${url}] is now avaliable.`)
+      await conn.destroy()
       break;
     } catch(err) {
       if(err.code !== 'ECONNREFUSED') {
