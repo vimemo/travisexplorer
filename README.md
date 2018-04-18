@@ -20,9 +20,17 @@ docker-compose run tests yarn test --watchAll
 
 ```
 
-export TEST_PG_URL=your-pg-url
-export TEST_COUCH_URL=your-couch-url
+export TEST_PG_URL=postgres://localhost:5432
+export TEST_COUCH_URL=http://admin:pass@localhost:5984
 yarn test --coverage --projects jest-*.config.js
+
+```
+
+# Helpful Commands
+
+```
+
+docker-compose build/ps/down/rm
 
 ```
 
@@ -30,6 +38,9 @@ yarn test --coverage --projects jest-*.config.js
 The following jest issue prevents running multiple
 runners(projects) before the databases are available.
 Once the db/containers are available, linting and testing (runners) are available; jest --projects jest-*.config.js
+
 ```
+
 https://github.com/facebook/jest/issues/5441
+
 ```

@@ -18,6 +18,7 @@ services:
     volumes:
       - ./lib:/usr/app/lib
       - ./tests:/usr/app/tests
+      - ./setup.js:/usr/app/setup.js
     depends_on:
       - couch
       - postgres
