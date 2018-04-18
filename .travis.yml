@@ -4,5 +4,4 @@ services:
   - docker
 
 script:
-  # - docker-compose up --exit-code-from test test
-  - docker-compose run tests yarn test
+  - docker-compose run tests yarn ci
