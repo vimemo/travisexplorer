@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`pg functional insert, get 1`] = `
+Array [
+  anonymous {
+    "description": "AAA",
+    "id": 1,
+    "name": "A",
+  },
+  anonymous {
+    "description": "BBB",
+    "id": 2,
+    "name": "B",
+  },
+  anonymous {
+    "description": "CCC",
+    "id": 3,
+    "name": "C",
+  },
+]
+`;

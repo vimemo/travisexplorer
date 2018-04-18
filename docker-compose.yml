@@ -10,7 +10,7 @@ services:
   postgres:
     image: postgres:9.4
     ports:
-      - 5444:5432
+      - ${PG_PORT}:5432
     environment:
       POSTGRES_PASSWORD: postgres
   tests:
@@ -23,4 +23,4 @@ services:
       - postgres
     environment:
       TEST_COUCH_URL: http://${COUCH_ADMIN}:${COUCH_PASS}@couch:${COUCH_PORT}
-      TEST_PG_URL: postgres://postgres:postgres@postgres:5444
+      TEST_PG_URL: postgres://postgres:postgres@postgres:${PG_PORT}
