@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/vimemo/travisexplorer.svg?branch=master)](https://travis-ci.org/vimemo/travisexplorer)
 [![Coverage Status](https://coveralls.io/repos/github/vimemo/travisexplorer/badge.svg?branch=master)](https://coveralls.io/github/vimemo/travisexplorer?branch=master)
+[![Maintainability](https://api.codeclimate.com/v1/badges/248eff6f527443854ec7/maintainability)](https://codeclimate.com/github/vimemo/travisexplorer/maintainability)
 
 # Running tests
 
