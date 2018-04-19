@@ -4,6 +4,11 @@
 [![Coverage Status](https://coveralls.io/repos/github/vimemo/travisexplorer/badge.svg?branch=master)](https://coveralls.io/github/vimemo/travisexplorer?branch=master)
 [![Maintainability](https://api.codeclimate.com/v1/badges/248eff6f527443854ec7/maintainability)](https://codeclimate.com/github/vimemo/travisexplorer/maintainability)
 
+
+Template project to explore running tests locally and from travis-ci
+with docker-compose.
+
+
 # Running tests
 
 docker-compose run tests yarn test
