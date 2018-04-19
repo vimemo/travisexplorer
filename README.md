@@ -11,15 +11,15 @@ with docker-compose.
 
 # Running tests
 
-docker-compose run tests yarn test
+docker-compose run test yarn test
 
 # Running tests with coverage
 
-docker-compose run tests yarn test --coverage
+docker-compose run test yarn test --coverage
 
 # Running tests in watch mode
 
-docker-compose run tests yarn test --watchAll
+docker-compose run test yarn test --watchAll
 
 # Running against local databases instead of docker-compose
 

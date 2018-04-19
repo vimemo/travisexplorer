@@ -13,7 +13,7 @@ services:
       - ${PG_PORT}:5432
     environment:
       POSTGRES_PASSWORD: postgres
-  tests:
+  test:
     build: .
     volumes:
       - ./lib:/usr/app/lib
