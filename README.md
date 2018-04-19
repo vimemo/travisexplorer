@@ -8,15 +8,15 @@
 
 docker-compose run tests yarn test
 
-# Running test with coverage
+# Running tests with coverage
 
 docker-compose run tests yarn test --coverage
 
-# Running test watcher
+# Running tests in watch mode
 
 docker-compose run tests yarn test --watchAll
 
-# Running against local databases
+# Running against local databases instead of docker-compose
 
 ```
 
@@ -31,6 +31,7 @@ yarn test --coverage --projects jest-*.config.js
 ```
 
 docker-compose build/ps/down/rm
+docker ps/stop/rm
 
 ```
 
