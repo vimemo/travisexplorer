@@ -4,4 +4,4 @@ services:
   - docker
 
 script:
-  - docker-compose run tests yarn ci
+  - docker-compose run test yarn ci
